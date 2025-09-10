@@ -1,0 +1,83 @@
+/* Section 02.01: Global styles (Tailwind base + custom variables) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens */
+:root{
+  --bg: #f8fafc;
+  --muted: #64748b;
+  --card: #ffffff;
+  --accent: #7c3aed;
+  --primary: #0b67ff;
+}
+
+/* Page base */
+body {
+  background: var(--bg);
+  color: #0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Always show scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Global container */
+.main-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Content section wrapper */
+.content-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Card utility for content sections */
+.card {
+  @apply bg-white rounded-2xl p-6 shadow-sm border border-gray-100;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Code block default */
+pre.code {
+  @apply bg-slate-900 text-slate-50 p-4 rounded-lg overflow-auto font-mono;
+}
+
+/* Sidebar style */
+aside.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: white;
+  border-right: 1px solid #eef2f7;
+}
+
+/* ----- Footer Styles ----- */
+footer.site-footer, #footer.site-footer, #footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #e2e8f0; /* light text on black background */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 12px;
+  padding: 8px 0;
+  background: transparent; /* black page bg shows through */
+  pointer-events: none; /* avoid covering interactions; text only */
+  z-index: 20;
+}
+
+/* Reserve vertical space so content isn't obscured by fixed footer */
+main { /* add bottom padding dynamically via layout pb-16; this is a safeguard */
+  padding-bottom: 2.5rem;
+}
