@@ -1,51 +1,48 @@
-# Simple workflow for deploying static Next.js site to GitHub Pages
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"]  # Adjust to your default branch
-  workflow_dispatch:  # Allows manual triggers
+    branches: ["main"] # Adjust to your branch
+  workflow_dispatch:
 
-# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4  # Use v4 for latest (v3 is deprecated)
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4  # Use v4
+        uses: actions/setup-node@v4
         with:
-          node-version: 20  # Matches your default Node 20
-          cache: 'npm'  # Caches dependencies
+          node-version: 20
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci  # Faster and more reliable than npm install
+        run: npm ci
 
       - name: Build with Next.js
         env:
-          BASE_PATH: ${{ github.event.repository.name }}  # Sets basePath for subpath deploys (e.g., /repo-name)
+          BASE_PATH: ${{ github.event.repository.name }} # For subpath (e.g., /prompting-site)
         run: npm run build
-        # This generates the 'out/' directory due to output: 'export'
 
-      - name: Verify out/ directory exists
-        run: ls -la out/  # Debug: Check if out/ was created (fails if not)
+      - name: Debug directory structure
+        run: |
+          ls -la
+          ls -la out/ || echo "out/ directory not found"
 
       - name: Create .nojekyll
-        run: touch out/.nojekyll  # Bypasses Jekyll on GitHub Pages
+        run: touch out/.nojekyll
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3  # Use v3 (v2 deprecated)
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: ./out  # Uploads the static files
+          path: ./out
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
@@ -55,4 +52,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4  # Official Pages deploy action
+        uses: actions/deploy-pages@v4

@@ -6,7 +6,7 @@
   "build": "next build",
     "start": "next start -p 3000",
     "lint": "next lint",
-  "deploy": "next build"
+  "deploy": "next build && gh-pages -d out"
   },
   "dependencies": {
     "next": "^14.2.32",
