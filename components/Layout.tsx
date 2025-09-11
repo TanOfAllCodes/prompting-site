@@ -66,7 +66,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 
       {/* Global Footer */}
       <footer id="footer" className="site-footer">
-        Powered by S3 - TI © 2025
+        Powered by S3 - TI 🚀 © 2025
       </footer>
     </div>
   )
