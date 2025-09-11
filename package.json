@@ -1,12 +1,12 @@
 {
-  "name": "prompting-site-nextjs",
+  "name": "prompting-site",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
-    "build": "next build",
+  "build": "next build",
     "start": "next start -p 3000",
-    "lint": "next lint"
+    "lint": "next lint",
+  "deploy": "next build"
   },
   "dependencies": {
     "next": "^14.2.32",
@@ -15,9 +15,15 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^24.3.1",
     "@types/react": "19.1.12",
     "autoprefixer": "^10.4.14",
+    "css-loader": "^7.1.2",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.21",
+    "postcss-loader": "^8.2.0",
+    "serve": "^14.2.5",
+    "style-loader": "^4.0.0",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.0.4"
   }

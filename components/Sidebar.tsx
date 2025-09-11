@@ -3,17 +3,17 @@ import Link from 'next/link'
 import React from 'react'
 
 const links = [
-  { href: '/', label: 'Home' },
-  { href: '/01-introduction', label: '01 — Introduction' },
-  { href: '/02-core-styles', label: '02 — Core Prompting Styles' },
-  { href: '/03-advanced-strategies', label: '03 — Advanced Strategies' },
-  { href: '/04-maieutic', label: '04 — Maieutic Prompting' },
-  { href: '/05-self-refinement', label: '05 — Self-Refinement' },
-  { href: '/06-least-to-most', label: '06 — Least-to-Most' },
-  { href: '/07-comparisons', label: '07 — Comparisons & Use Cases' },
-  { href: '/08-pitfalls', label: '08 — Pitfalls & Mitigation' },
-  { href: '/09-cheat-sheets', label: '09 — Cheat Sheets' },
-  { href: '/10-references', label: '10 — References' },
+  { href: './', label: 'Home' },
+  { href: './01-introduction', label: '01 — Introduction' },
+  { href: './02-core-styles', label: '02 — Core Prompting Styles' },
+  { href: './03-advanced-strategies', label: '03 — Advanced Strategies' },
+  { href: './04-maieutic', label: '04 — Maieutic Prompting' },
+  { href: './05-self-refinement', label: '05 — Self-Refinement' },
+  { href: './06-least-to-most', label: '06 — Least-to-Most' },
+  { href: './07-comparisons', label: '07 — Comparisons & Use Cases' },
+  { href: './08-pitfalls', label: '08 — Pitfalls & Mitigation' },
+  { href: './09-cheat-sheets', label: '09 — Cheat Sheets' },
+  { href: './10-references', label: '10 — References' },
 ]
 
 export default function Sidebar() {
