@@ -26,8 +26,6 @@ jobs:
         run: npm ci
 
       - name: Build with Next.js
-        env:
-          BASE_PATH: ${{ github.event.repository.name }} # For subpath (e.g., /prompting-site)
         run: npm run build
 
       - name: Debug directory structure

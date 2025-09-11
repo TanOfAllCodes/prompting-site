@@ -6,7 +6,7 @@ const nextConfig = {
     unoptimized: true, // Disables image optimization (required for GitHub Pages)
   },
   // Set basePath for subpath deploys (e.g., username.github.io/repo-name)
-  basePath: process.env.BASE_PATH || '',
+  basePath: '/prompting-site',
 };
 
 module.exports = nextConfig;
